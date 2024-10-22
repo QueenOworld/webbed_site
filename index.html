@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>meow!</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./speen.css">
+    <link href="https://lea.pet/@lexi" rel="me">
+    <meta name="description" content="i'm kbity">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://softkittypa.ws">
+    <meta property="og:title" content="lexi's webbed site">
+    <meta property="og:description" content="mraow">
+    <meta property="og:image" content="https://softkittypa.ws/assets/agony.webp">
+    <meta property="theme-color" content="#ff91cf">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://softkittypa.ws">
+    <meta property="twitter:title" content="lexi's webbed site">
+    <meta property="twitter:description" content="mraow">
+    <meta property="twitter:image" content="https://softkittypa.ws/assets/agony.webp">
+    <script defer data-domain="softkittypa.ws" data-api="https://stats.lea.pet/api/stats"
+        src="https://stats.lea.pet/js/script.js"></script>
+    <script>
+        function meow() {
+            var x = document.getElementById("audioPlayer");
+            x.play();
+        }
+    </script>
+    <script src="./cursor-effects.js"></script>
+    <script src="vm/build/libv86.js"></script>
+    <script>
+        b = null;
+        "use strict";
+
+        function linux() {
+            var btn = document.getElementById("linux-btn");
+            btn.style.display = "none";
+            var emulator = window.emulator = new V86({
+                wasm_path: "vm/build/v86.wasm",
+                memory_size: 256 * 1024 * 1024,
+                vga_memory_size: 8 * 1024 * 1024,
+                screen_container: document.getElementById("screen_container"),
+                bios: {
+                    url: "vm/bios/seabios.bin",
+                },
+                vga_bios: {
+                    url: "vm/bios/vgabios.bin",
+                },
+                bzimage: {
+                    url: "vm/images/bzImage"
+                },
+                initrd: {
+                    url: "vm/images/rootfs.cpio"
+                },
+                //        hda: {
+                //           url: "vm/images/rootfs.tar"
+                //        },
+                //        cmdline: "root=/dev/vda",
+                // I am on crack.
+                network_proxy_url: "wss://relay.widgetry.org/",
+                autostart: true
+            });
+            var data = "";
+            emulator.add_listener("serial0-output-byte", function (byte) {
+                var char = String.fromCharCode(byte);
+                if (char === "\r") {
+                    return;
+                }
+                data = data + char;
+                //console.log(char)
+                console.log(data)
+                if (data.includes("fedi")) {
+                    console.log("Command sent");
+                    data = "";
+                    window.open("https://lea.pet/@lexi")
+                }
+                if (data.includes("github")) {
+                    console.log("Command sent");
+                    data = "";
+                    window.open("https://github.com/QueenOworld");
+                }
+                if (data.includes("challenge")) {
+                    console.log("I HATE THIS AAAAHHHHHHHHHHH")
+                    data = "";
+                    emulator.serial0_send(b);
+                }
+            })
+
+        }
+        function javascriptCallback(a) {b = a}
+    </script>
+</head>
+
+<body>
+    <script>
+        new cursoreffects.rainbowCursor({
+            length: 30,
+            colors: ["#5bcefa", "#f5a9b8", "#fff", "#f5a9b8", "#5bcefa"],
+            size: 4
+        });
+    </script>
+    <script src="./oneko/oneko.js" data-cat="./oneko/oneko.gif"></script>
+    <audio id="audioPlayer">
+        <source src="./assets/mrap.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="onekoMeow">
+        <source src="./assets/moew-cat-purring-fx.wav" type="audio/mpeg" />
+    </audio>
+    <div class="topnav">
+        <a class="active" href="./" title="you are here"></a>
+        <a href="./minecraft/" title="minecraft">󰍳</a>
+        <a href="./resources/" title="resources (wip)"></a>
+        <a href="https://buymeacoffee.com/lexicat" title="buy me a coffee"></a>
+    </div>
+    <h1 class="lesbian" id="greeting">Hello!!</h1>
+    <h2 class="transradial" id="melexi">I'm Lexi :3</h2>
+    <h3
+        style="color:white; background: -webkit-radial-gradient(#fee,#e4f,#c3f); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Welcome to my webbed site</h3>
+    <table style="width: 100%; text-align:center;">
+        <tr>
+            <td>
+                <div>
+                    <h2 style="color: white;">
+                        ︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿
+                    </h2>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div>
+                        <img id="blobcat" src="./assets/signal-2024-04-24-102645_002.gif" onclick="meow()" />
+                    </div>
+                    <div
+                        style="overflow: clip; width: auto; height: 250px; perspective: 550px; display: flex; align-items: center; justify-content: center;">
+                        <a href="https://marbelynrye.000.pe">
+                            <article id="drawer" class="threed effigy">
+                                <style>
+                                    .effigy * {
+                                        transform-style: preserve-3d;
+                                    }
+
+                                    .threed {
+                                        perspective: 550px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        overflow: clip;
+                                        filter: drop-shadow(1px 1px 0
+                                                /*rgb(255,255,255,0.75)*/
+                                                color-mix(in srgb, magenta, transparent 25%));
+
+                                        @media (prefers-color-scheme: light) {
+                                            filter: drop-shadow(1px 1px 0 color-mix(in srgb, black, transparent 25%));
+                                        }
+                                    }
+
+                                    .flat * {
+                                        transform-style: flat;
+                                    }
+
+                                    article.effigy#drawer {
+                                        all: initial;
+                                    }
+
+                                    @keyframes bounce {
+                                        0% {
+                                            transform: rotateY(0deg) rotateX(10deg);
+                                        }
+
+                                        50% {
+                                            transform: rotateY(160deg) rotateX(7deg);
+                                        }
+
+                                        100% {
+                                            transform: rotateY(360deg) rotateX(10deg);
+                                        }
+                                    }
+
+                                    @keyframes bouncy {
+                                        from {
+                                            rotate: 15deg;
+                                        }
+
+                                        to {
+                                            rotate: -15deg;
+                                        }
+                                    }
+
+                                    @keyframes headbob {
+                                        0% {
+                                            transform: rotateX(-32deg) translateY(0) rotate(-5deg);
+                                        }
+
+                                        33% {
+                                            transform: rotateX(-32deg) translateY(-5%) rotate(-5deg);
+                                        }
+
+                                        66% {
+                                            transform: rotateX(-32deg) translateY(0) rotate(5deg);
+                                        }
+
+                                        100% {
+                                            transform: rotateX(-32deg) translateY(-5%) rotate(5deg);
+                                        }
+                                    }
+
+                                    @keyframes stare {
+                                        0% {
+                                            translate: -47% 100%;
+                                        }
+
+                                        33% {
+                                            translate: 36% 80%;
+                                        }
+
+                                        66% {
+                                            translate: 36% 114%;
+                                        }
+
+                                        100% {
+                                            translate: 0% 100%;
+                                        }
+                                    }
+
+                                    @keyframes SHAKE {
+                                        0% {
+                                            translate: 0px 1px;
+                                            rotate: 0deg;
+                                        }
+
+                                        5% {
+                                            translate: -1px -1px;
+                                            rotate: 1deg;
+                                        }
+
+                                        11% {
+                                            translate: -2px 1px;
+                                            rotate: -1deg;
+                                        }
+
+                                        17% {
+                                            translate: 2px 2px;
+                                            rotate: 0deg;
+                                        }
+
+                                        20% {
+                                            translate: 2px -1px;
+                                            rotate: -1deg;
+                                        }
+
+                                        28% {
+                                            translate: -1px 1px;
+                                            rotate: 1deg;
+                                        }
+
+                                        40% {
+                                            translate: -2px 4px;
+                                            rotate: 0deg;
+                                        }
+
+                                        49% {
+                                            translate: 1px 1px;
+                                            rotate: 1deg;
+                                        }
+
+                                        60% {
+                                            translate: -1px -1px;
+                                            rotate: -1deg;
+                                        }
+
+                                        90% {
+                                            translate: 1px 2px;
+                                            rotate: 0deg;
+                                        }
+
+                                        100% {
+                                            translate: 1px -2px;
+                                            rotate: 1deg;
+                                        }
+                                    }
+
+                                    .effigy {
+                                        width: 200px;
+                                        height: 250px;
+
+                                        &:not(.aware)>.body>.head>.eye {
+                                            --x: 0 !important;
+                                            --y: 0 !important;
+
+                                            &::after {
+                                                transition-duration: 500ms;
+                                                transition-timing-function: ease-out;
+                                            }
+                                        }
+
+                                        & .head {
+                                            transform-origin: center 80px;
+                                            transform: rotateX(32deg);
+                                            position: absolute;
+                                            animation: headbob 2s ease-in-out infinite alternate;
+                                            background-image: url("./assets/effigy/akieffigy_head.gif");
+
+                                            &[type="2"] {
+                                                background-image: url("./assets/effigy/akieffigy_head2.gif");
+                                            }
+
+                                            background-size: contain;
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            height: 100%;
+                                            width: 100%;
+
+                                            &::before {
+                                                content: "";
+                                                display: inline-block;
+                                                position: absolute;
+                                                clip-path: ellipse(15% 6% at 50% 11%);
+                                                width: 100%;
+                                                height: 100%;
+                                                background: black;
+                                                backface-visibility: hidden;
+                                                transform: rotateY(180deg);
+                                            }
+
+                                            &>.eye {
+                                                width: 100%;
+                                                height: 100%;
+                                                background-image:
+                                                    /*color-mix(in srgb,*/
+                                                    radial-gradient(circle, yellow 0 9px, transparent 9px)
+                                                    /*,transparent)*/
+                                                ;
+                                                background-position: 0 -78px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: flex-start;
+                                                --x: 0;
+                                                --y: 0;
+                                                backface-visibility: hidden;
+
+                                                &::before,
+                                                &::after {
+                                                    content: "";
+                                                    display: inline-block;
+                                                    position: absolute;
+                                                }
+
+                                                &::after {
+                                                    height: 15px;
+                                                    translate: calc(0% + calc(var(--x) * 1%)) calc(100% + calc(var(--y) * 1%));
+                                                    aspect-ratio: 1/1;
+                                                    background: black;
+                                                    border-radius: 50%;
+                                                    transition: translate 100ms linear;
+                                                }
+
+                                                &::before {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    clip-path: ellipse(15% 6% at 50% 11%);
+                                                    background-image: linear-gradient(to top, black 0 15px, transparent 15px), linear-gradient(to top, black 0 15px, transparent 15px);
+                                                    background-position: 0 11px, 0 47px;
+                                                }
+                                            }
+                                        }
+
+                                        & .body {
+                                            background-image: url("./assets/effigy/akieffigy_body.gif");
+
+                                            &[type="2"] {
+                                                background-image: url("./assets/effigy/akieffigy_body2.gif");
+                                            }
+
+                                            height: 200px;
+                                            width: 105px;
+                                            background-position: center;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            background-size: contain;
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+
+                                            &.fluffy {
+
+                                                &::before,
+                                                &::after {
+                                                    content: "";
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    transform: rotateY(15deg);
+                                                    position: absolute;
+                                                    background: inherit;
+                                                    clip-path: polygon(57% 20%, 88% 0px, 70.15% 22.98%, 65.51% 38.08%, 101.29% 22.83%, 36% 23%, 19% 20%, 2% 19%, 53.74% 34.69%, 9.15% 81px);
+                                                }
+
+                                                &::after {
+                                                    transform: rotateY(-15deg);
+                                                    clip-path: polygon(57% 20%, 124.46% 67px, 62.01% 30.41%, 72.13% 29.64%, 93% 7%, 55.37% 25.04%, -16.53% 43.98%, 23px 26.07%, -6.37% 25.96%, 25% 5%);
+                                                }
+                                            }
+                                        }
+
+                                        & .body[spin] {
+                                            animation: bounce 6s linear infinite, bouncy 3s ease-in-out alternate infinite;
+                                        }
+                                    }
+
+                                    #drawer {
+                                        shape-outside: polygon(69.51% 88.8%, 63.22% 46.77%, 69.97% 7.60%, 24.99% 13.2%, 9.66% 36.13%, 47.71% 42.8%, 17.97% 78.8%, 49.98% 91.6%);
+                                        width: 200px;
+                                    }
+
+                                    @keyframes hold {
+                                        from {
+                                            transform: translateY(-50%) rotateX(-55deg) skewY(-2deg)translateY(-25%);
+                                        }
+
+                                        to {
+                                            transform: translateY(-50%) translateY(-30px) rotateX(-55deg) skewY(2deg)translateY(-25%)
+                                        }
+                                    }
+
+                                    @keyframes draw {
+                                        0% {
+                                            transform: translateX(20px) translateY(20px) rotateX(-90deg) rotateZ(-45deg) rotateY(45deg);
+                                        }
+
+                                        25% {
+                                            transform: translateX(30px) translateY(60px) rotateX(-90deg) rotateZ(-45deg) rotateY(45deg);
+                                        }
+
+                                        50% {
+                                            transform: translateX(120px) translateY(9px) rotateX(-90deg) rotateZ(-45deg) rotateY(45deg);
+                                        }
+
+                                        75% {
+                                            transform: translateX(70px) translateY(50px) rotateX(-90deg) rotateZ(-45deg) rotateY(45deg);
+                                        }
+
+                                        100% {
+                                            transform: translateX(60px) translateY(20px) rotateX(-90deg) rotateZ(-45deg) rotateY(45deg);
+                                        }
+                                    }
+
+                                    #tablet {
+                                        background: url("./assets/effigy/tablet.png");
+                                        width: 120px;
+                                        height: 60px;
+                                        background-size: 100%;
+                                        background-position: center;
+                                        transform: rotateX(55deg);
+                                        transform-origin: center bottom;
+                                        animation: hold 3s ease-in-out alternate infinite;
+                                    }
+
+                                    #pen {
+                                        animation: draw 2s ease-in-out infinite;
+                                        transform-origin: center top;
+                                        display: block;
+                                    }
+
+                                    @keyframes read {
+                                        0% {
+                                            translate: -11% 110%;
+                                        }
+
+                                        33% {
+                                            translate: -2% 111%;
+                                        }
+
+                                        66% {
+                                            translate: 24% 110%;
+                                        }
+
+                                        100% {
+                                            translate: -11% 110%;
+                                        }
+                                    }
+
+                                    #drawer>.body {
+                                        & .eye::after {
+                                            animation: read 5s ease-in-out infinite;
+                                        }
+                                    }
+                                </style>
+                                <div class="body fluffy" type="2" spin="">
+                                    <div class="head">
+                                        <div class="eye"></div>
+                                    </div>
+                                    <div id="tablet">
+                                        <img src="./assets/effigy/pen.png" id="pen" height="70">
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <h2 style="color: white;">
+                        ︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿<br>︿
+                    </h2>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <h2
+        style="color:white; background: -webkit-radial-gradient(#b0e,#bef,#e54); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        i am a self taught programmer and math enthusiast<br>i love: indie art, open source, linux, programming, cats,
+        and math<br>
+    </h2>
+    <h1 class="trans"></h1>
+    <div style="margin: 20px; filter: drop-shadow(0 0 0.75rem black);">
+        <a class="trans" id="girlfriend" href="https://me.lea.pet">
+            pet my girlfriend
+        </a>
+        <a class="lesbian" id="andme" href="https://lea.pet/@lexi"> and me too </a>
+    </div>
+    <h3 id="linux-btn"
+        style="color:white; background: -webkit-radial-gradient(#aee,#a2f,#ca4); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+        onclick="linux()">click here for free linux</h3>
+    <div id="screen_container">
+        <div style="white-space: pre; font: hack;"></div>
+        <canvas id="vga" style="image-rendering: pixelated; display: none; margin: auto;" width="1025"
+            height="768"></canvas>
+        <div style="position: absolute; top: 0; z-index: 10"></div>
+    </div>
+    <div class="corruptions" style="margin: 30px;">
+        <h1 style="color:lavender;"><br><br>
+            i love corruptions!!</h1>
+        <a href="https://redscientist.com/rtc">
+            <img class="hoverimg" src="./assets/rtc.png" alt="real time corruptor" style="width: 300px;">
+        </a>
+        <li class="button-container" style="margin-bottom: 20px;">
+            <img class="hoverimg" style="width: 75%; max-width: 450px;" src="./assets/co1.jpeg" alt="">
+            <img class="hoverimg" style="width: 75%; max-width: 450px;" src="./assets/co2.jpeg" alt="">
+            <img class="hoverimg" style="width: 75%; max-width: 450px;" src="./assets/co3.jpeg" alt="">
+        </li>
+        <li class="button-container" style="margin-bottom: 20px;">
+            <img class="hoverimg" style="width: 75%; max-width: 250px;" src="./assets/jpegged.png" alt="">
+            <img class="hoverimg" style="width: 75%; max-width: 450px" src="./assets/co4.jpeg" alt="">
+            <video class="hoverimg" src="./assets/corrupted_fn.mp4" width=75% style="width=75%; max-width:450px;"
+                controls>
+
+            </video>
+        </li>
+        <h2 style="color:lavender">
+            i've done much more than this over the years, and have even made my own programs for corruptions </h2>
+        <br><br>
+    </div>
+    <div class="whereiam">
+        <div
+            style="color:white; background: -webkit-radial-gradient(#e1b,#bfc,#23c); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <h1>you can contact me if you want</h1>
+            <h2>
+                <a href="https://signal.me/#eu/pU30aY_AE6O8G90jhNj3_4xc0THZthnmUP7GE6-CvojRwS2G0atI2qhwyUs2xLfb">
+                    Signal:<br><small><small>Lexi.69</small></small>
+                </a>
+                <br><br>
+                <a href="https://matrix.to/#/@lexi:conduit.sadlyihaveto.top">
+                    Matrix:<br><small><small>@lexi:conduit.sadlyihaveto.top</small></small>
+                </a>
+                <br><br>
+                <a href="mailto:kitty@lea.pet">
+                    Email:<br><small><small>kitty@lea.pet</small></small>
+                </a>
+                <br><br>
+                <a href="https://lea.pet/@lexi">
+                    Fedi:<br><small><small>@lexi@lea.pet</small></small>
+                </a>
+                <br><br>
+                <a href="https://discord.gg/Rw8DudcD">
+                    Discord:<br><small><small>queenoworld</small></small>
+                </a>
+            </h2>
+        </div>
+        <div
+            style="color:white; background: -webkit-radial-gradient(#ce2,#4cf,#9bd); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 20px;">
+            <h1>i also make things sometimes</h1>
+            <h2>
+                <a href="https://github.com/QueenOworld">
+                    My Github<br>
+                </a>
+                <a href="https://github.com/QueenOworld/Kosmos">
+                    <br>Kosmos<br>
+                </a>
+                <a href="https://github.com/QueenOworld/Ren-Bot">
+                    <br>Ren Bot<br>
+                </a>
+                <a href="https://twitter.com/UTSwitched">
+                    <br>Undertale Switched</br>
+                </a>
+                <a href="https://upryzing.app">
+                    <br>Upryzing
+                </a>
+            </h2>
+        </div>
+    </div>
+    <div>
+        <img id="neocat" src="./assets/neocat_floof_256.webp" alt=""
+            style="filter: drop-shadow(0 0 1.45rem black); scale: 70%;">
+    </div>
+    <li class="button-container" style="gap: 8px">
+        <iframe class="button" src="//incr.easrng.net/badge?key=leksee"
+            style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31"
+            frameborder="0">
+        </iframe>
+        <a class="button" href="https://softkittypa.ws" title="my own button">
+            <img src="./assets/buttons/softkittypaws.png">
+        </a>
+        <a class="button" href="https://corru.observer" title="really cool game">
+            <img src="./assets/buttons/corru.gif">
+        </a>
+        <a class="button" title="ACAB">
+            <img src="./assets/buttons/acab.gif">
+        </a>
+        <a class="button" href="https://archlinux.org" title="i use arch btw">
+            <img src="./assets/buttons/archlinux.gif">
+        </a>
+        <a class="button" title="i fucking hate nfts">
+            <img src="./assets/buttons/nft.gif">
+        </a>
+        <a class="button" href="https://futacockinside.me" title="my girlfriend's game archive">
+            <img src="./assets/buttons/piracy.gif">
+        </a>
+        <a class="button" title="i'm very gay and gender">
+            <img src="./assets/buttons/queer.png">
+        </a>
+        <a class="button" title="slugcar.,,">
+            <img src="./assets/buttons/slugcat.png">
+        </a>
+        <a class="button" href="https://dimden.dev/" title="i think dimden is cool">
+            <img src="https://dimden.dev/images/88x31.gif">
+        </a>
+        <a class="button" title="leenucks!!">
+            <img src="./assets/buttons/gnu-linux.gif">
+        </a>
+        <a class="button" title="my website is WOKE">
+            <img src="./assets/buttons/bu12.gif">
+        </a>
+        <a class="button" title="i love my people">
+            <img src="./assets/buttons/f4aef25d.jpg">
+        </a>
+        <a class="button" href="https://librewolf.net/" title="except i don't use base firefox because weh">
+            <img src="./assets/buttons/firefox4.gif">
+        </a>
+        <a class="button" href="https://msx.gay/" title="cool person!! also i have a url lexi.is-hella.gay">
+            <img src="./assets/buttons/msx-bi.gif">
+        </a>
+        <a class="button" title="i HATE microsoft">
+            <img src="./assets/buttons/hatems.gif">
+        </a>
+        <a class="button" href="https://neovim.io/" title="i use neovim">
+            <img src="./assets/buttons/neovim.gif">
+        </a>
+        <a class="button" href="https://ublockorigin.com/" title="get ublock origin">
+            <img src="./assets/buttons/ublockorigin.png">
+        </a>
+        <a class="button" href="https://lineageos.org/" title="i use lineage 21 microg rooted with magisk">
+            <img src="./assets/buttons/lineageos.png">
+        </a>
+        <a class="button" href="https://pythons.site" title="friend">
+            <img src="./assets/buttons/python.gif">
+        </a>
+        <a class="button" href="https://devilmayquake.com" title="it's ultrakilling time">
+            <img src="assets/buttons/ultrakill.png">
+        </a>
+        <a class="button" href="https://redscientist.com/rtc" title="i love corruptions">
+            <img src="./assets/buttons/rtcv.png" alt="">
+        </a>
+        <a class="button" href="https://cqql.site/" title="is friend">
+            <img src="https://cqql.site/button/8831button.png" alt="">
+        </a>
+        <a class="button" href="https://yugoslavia.best" title="best website ever made i think">
+            <img src="./assets/buttons/blinchik.gif" alt="">
+        </a>
+        <a class="button" href="https://easrng.net">
+            <img src="./assets/buttons/easrng.gif" title="cool person :3" alt="">
+        </a>
+        <a class="button">
+            <img src="./assets/buttons/fuck-google.gif" title="i HATE google" alt="">
+        </a>
+        <a class="button" href="https://ezri.pet/">
+            <img src="./assets/buttons/ezri.png" alt="" title="they're really cool :3">
+        </a>
+        <a class="button" href="https://wetdry.world/@timsweeneyepic">
+            <img src="assets/buttons/timsweeney.png" alt="" title="tim sweeney epicgame s">
+        </a>
+        <a class="button" href="https://sneexy.pages.gay/">
+            <img src="assets/buttons/ruben.png" alt=""
+                title="silly dragon who keeps being homophobic by beating me in misskey reversi">
+        </a>
+        <a class="button" href="https://vea.st/">
+            <img src="./assets/buttons/chloe.png" alt="" title="i aspire to be like her">
+        </a>
+        <a class="button" href="https://split.pet">
+            <img src="./assets/buttons/split.png" alt="" title="hello everybody my name is markiplier">
+        </a>
+        <a class="button" href="https://maia.crimew.gay/">
+            <img src="./assets/buttons/maia.avif" alt="" title="she's so cool :3">
+        </a>
+        <a class="button" href="https://xaselgio.net/">
+            <img src="./assets/buttons/xaselgio.gif" alt="" title="fedi friend <3">
+        </a>
+        <a class="button" href="https://gdbrowser.com/86407629">
+            <img src="./assets/buttons/tidalwave.webp" alt="" title="<<<TIDAL<<<<<<
+>>>>>>>WAVE>>>">
+        </a>
+        <a class="button" href="https://slug.cat/">
+            <img src="./assets/buttons/sluggyatt.png" alt="" title="wiki <3">
+        </a>
+        <a class="button" href="https://necoarc.dev/">
+            <img src="./assets/buttons/necoarc-88x31.webp" alt="" title="neco arc">
+        </a>
+        <a class="button" href="https://tabs.split.pet/">
+            <img src="https://tabs.split.pet/button.svg" alt="" title="split's tabs">
+        </a>
+        <a class="button" href="https://www.youtube.com/watch?v=WfYyBp4Ln2s">
+            <img src="./assets/buttons/doinyourmom.gif" alt="" title="doin' your mom!">
+        </a>
+        <a class="button" href="https://slonk.ing/">
+            <img src="./assets/buttons/slonk.apng" alt="" title="slonk">
+        </a>
+    </li>
+    <script>
+        if (!window.matchMedia('(hover: none)').matches && !window.matchMedia('(prefers-reduced-motion)').matches)
+            Array.from(document
+                .getElementsByClassName("button"))
+                .forEach((e) => {
+                    let startEffect = (ev) => {
+                        let yP = 1 - (ev.offsetY / 31 * 2)
+                        let xP = -1 + (ev.offsetX / 88 * 2)
+                        e.style.transform =
+                            "scale(115%)"
+                            + ` rotate3d(${yP.toFixed(2)}, ${xP.toFixed(2)},0,20deg)`
+                            + ` translate(${3 * xP}px,${-5 * yP}px)`;
+                    }
+                    e.addEventListener('mouseover', startEffect)
+                    e.addEventListener('mousemove', startEffect)
+                    e.addEventListener('mouseleave', () => {
+                        e.style.transform = ""
+                        e.style.boxShadow = ""
+                    })
+                }) 
+    </script>
+</body>
+
+</html>
