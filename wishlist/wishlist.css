@@ -59,6 +59,7 @@ p {
     margin: 0.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -74,6 +75,7 @@ input:focus~label {
 
 input:checked+p {
     -webkit-line-clamp: unset;
+    line-clamp: unset;
 }
 
 input:checked~label,
