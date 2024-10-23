@@ -64,6 +64,12 @@ p {
     overflow: hidden;
 }
 
+.para {
+    margin: 0.8rem 0.2rem;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+}
+
 table {
     margin: auto;
     width: 100%;
