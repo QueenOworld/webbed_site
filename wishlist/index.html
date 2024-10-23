@@ -7,57 +7,94 @@
     <meta charset="utf-8" />
     <title>wishlist</title>
     <link rel="stylesheet" type="text/css" href="./wishlist.css" />
-    <script defer data-domain="softkittypa.ws" data-api="https://stats.lea.pet/api/stats" src="https://stats.lea.pet/js/script.js"></script>
+    <script defer data-domain="softkittypa.ws" data-api="https://stats.lea.pet/api/stats"
+        src="https://stats.lea.pet/js/script.js"></script>
 </head>
 
 <body>
-    <div>
-        <h1 style="color: white;">Wishlist</h1>
-        <h2 style="color:white">Sorted by priority (Descending)</h2>
-    </div>
+    <article style="min-width: 24rem; max-width: 39%;">
+        <h1>Wishlist</h1>
+        <h2>Sorted from highest to lowest priority</h2>
+        <table>
+            <thead>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Notes</td>
+            </thead>
+            <tbody>
+                <tr class="wishlist-item">
+                    <td>
+                        <p><a href="https://store.seestar.com/products/seestar-s50">Seestar S50</a></p>
+                    </td>
+                    <td>
+                        <p>$499.00</p>
+                    </td>
+                    <td><input type="checkbox" id="expanded">
+                        <p>This telescope is not good for regular stargazing, but it is <a
+                                href="https://www.youtube.com/watch?v=czhSpO7ISR0">very good at astrophotography</a>,
+                            especially for its price. One thing I don't like about this is that it takes away the entire
+                            process. The solution would be to have this telescope for pictures, and a manual one for
+                            stargazing.
+                        </p>
+                        <label for="expanded" role="button" style="margin: 0.2rem; color: #909090;">read more</label>
+                    </td>
+                </tr>
+                <tr class="wishlist-item">
+                    <td>
+                        <p><a href="">Telescope</a></p>
+                    </td>
+                    <td>
+                        <p>$N/A</p>
+                    </td>
+                    <td><input type="checkbox" id="expanded2">
+                        <p>I don't want any particular telescope, but I think it's time to move on to something better
+                            than the one I've had for 10 years. While I couldn't do the astrophotography the seestar-s50
+                            allows for, it's a different experience to be looking through a lens and seeing deep space
+                            objects in real time instead of waiting on a picture.</p>
+                        <label for="expanded2" role="button" style="margin: 0.2rem; color: #909090;">read more</label>
+                    </td>
+                </tr>
+                <tr class="wishlist-item">
+                    <td>
+                        <p><a href="https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/">PINECIL</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p>$25.99</p>
+                    </td>
+                    <td><input type="checkbox" id="expanded3">
+                        <p>Smart soldering iron with open source firmware. It would be nice to start getting into
+                            tinkering with electronics, and a soldering iron is a tool i would definitely need.</p>
+                        <label for="expanded3" role="button" style="margin: 0.2rem; color: #909090;">read more</label>
+                    </td>
+                </tr>
+                <!-- <tr class="wishlist-item">
+                    <td>
+                        <p><a href="">name</a></p>
+                    </td>
+                    <td>
+                        <p>$0.00</p>
+                    </td>
+                    <td><input type="checkbox" id="expanded4">
+                        <p>note note note note note note note note note note note</p>
+                        <label for="expanded4" role="button" style="margin: 0.2rem; color: #909090;">read more</label>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </article>
+    <script>
+        const ps = document.querySelectorAll('p');
+        const observer = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                entry.target.classList[entry.target.scrollHeight > entry.contentRect.height ? 'add' : 'remove']('truncated');
+            }
+        });
+
+        ps.forEach(p => {
+            observer.observe(p);
+        });
+    </script>
 </body>
-<table class="wishlist">
-    <tr class="wishlist-head wishlist-item">
-        <td>
-            <h1 style="color: white;">Item</h1>
-        </td>
-        <td>
-            <h2 style="color: white; text-wrap: nowrap;">Price (USD)</h2>
-        </td>
-        <td>
-            <h3 style="color: white;">Description</h3>
-        </td>
-    </tr>
-    <tr class="wishlist-item">
-        <td>
-            <h1 style="color: white;">Server hardware</h1>
-        </td>
-        <td>
-            <h2 style="color: white; text-wrap: nowrap;">N/A</h2>
-        </td>
-        <td>
-            <h3 style="color: white;">I would like my own hardware for hosting various services for myself and my
-                friends.</h3>
-        </td>
-    </tr>
-    <tr class="wishlist-item">
-        <td>
-            <h1 style="color: white;">Money</h1>
-        </td>
-        <td>
-            <h2 style="color: white; text-wrap: nowrap;">ω</h2>
-        </td>
-        <td>
-            <h3 style="color: white;">If unsure of what to get me, I can just save money given to me to spend on
-                whatever I want.</h3>
-        </td>
-    </tr> 
-<div style="margin-bottom: 20px;">
-    <h1 style="color: white;">What NOT to get me</h1>
-    <li>
-        <h2 style="color: white;">Amazon gift cards, or any gift cards. Please just give me money instead of locking
-            me into one vendor.</h2>
-    </li>
-</div>
 
 </html>
