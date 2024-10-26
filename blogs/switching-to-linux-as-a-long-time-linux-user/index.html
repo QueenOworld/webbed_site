@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Switching to Linux as a long time Windows user</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script defer data-domain="softkittypa.ws" data-api="https://stats.lea.pet/api/stats"
+        src="https://stats.lea.pet/js/script.js"></script>
+</head>
+
+<body>
+    <article>
+        <h1>Switching to Linux as a long time Windows user</h1>
+        <p>Switching to Linux is hard. I told myself I would use windows until windows 10 becomes obsolete and I'm
+            forced to switch, but microsoft made some decisions that made me say enough is enough and I made the switch.
+            After using Linux for a year now, I would like to share my experiences, and maybe help guide people who are
+            curious about switching to Linux, but are too scared to, or are unsure.</p>
+        <h2>Picking a distro</h2>
+        <p>Picking a distro is probably one of the hardest parts of switching to Linux and what drives a lot of people
+            away. There are so many options to choose from, and it's hard to know which one is the best for you. A lot
+            of people will suggest distros like Ubuntu or Mint because they're often considered the easiest to install,
+            but that may be a bad choice, especially if you are on newer hardware.</p>
+        <p> Ubuntu and Mint are not built on the
+            latest drivers since updates come in releases rather than just getting updates as they come. While this is
+            good for stability and knowing the packages will play nice with each other, this means that if you were to
+            install Ubuntu or Mint on relatively new hardware, things might just not work. You could just swap out old
+            packages for new ones, but that likely means having to touch the command line, which can be intimidating.
+        </p>
+        <p>
+            There's also the issue of how the easy way to install software for users through a graphical interface is
+            through snaps (on ubuntu) or flatpaks. There are sometimes issues that only exist in the flatpak or snap
+            versions of packages, for example, the steam snap has lots of issues and it's encouraged to just install it
+            from the .deb package instead. That wouldn't be the fault of the user to just assume it would work after
+            installing it though. I've had friends tell me that firefox isn't working properly after installing the
+            flatpak version, and I told them to try the native package instead, and all of a sudden it fixed. This is a
+            shame, because installing packages this way is so simple and easy, and flatpaks have the feature of being
+            containerized, meaning they run isolated from everything else and you can choose what it has access to,
+            which may be appealing to some people.
+        <p>The way you would get the latest native packages for your system is through its package manager. On Debian
+            based systems, it would be apt, Arch based systems use pacman. If you're uncomfortable using a terminal, GUI
+            applications do exist to make using your native package manager more user friendly. There's pamac for arch
+            based systems, created by manjaro, it also supports snaps and flatpaks. Gnome software has support for deb,
+            rpm, flatpak, snap, arch repo, and aur packages, and is installed by default on many distrobutions using
+            gnome like Ubuntu and Fedora.</p>
+        <p>So what should you choose? Well, I don't know. I can't tell you what distro will be the best for you, but I
+            can give some recommendations. If you want a distro that is easy to install and is built on relatively new
+            packages, Fedora might be a good choice. If you're okay with touching the command line a bit but want an
+            easy installation, Endeavour OS is pretty nice, and arch based, meaning you'll get access to the latest
+            packages and the aur. My
+            personal choice is Arch, since I prefer having the latest packages, and I enjoy tinkering with my system. It
+            doesn't have the easiest installation process though, and from what I've heard archinstall can be pretty hit
+            or miss, but if it works then hey, good for you.</p>
+        <p>If you want to test distros and see which one you're most comfortable with, you can take a USB stick and
+            install <a href="https://www.ventoy.net/en/index.html">ventoy</a> on it. This will let you just drag and
+            drop isos into it and you can choose which one to boot
+            when you boot the usb, giving you a live environment to play around with and try various distros without
+            actually installing it.
+        </p>
+        <h2>Desktop Environments</h2>
+        <p>Choosing a desktop environment is as important as the choosing the OS. If you're coming from windows, you
+            probably don't know what a desktop environment is. When you think windows, you think of the desktop
+            environment and OS as one thing. On Linux, you can choose the OS and desktop environment independently of
+            each other. Think of it
+            like this: the OS you choose governs the package management system you'll use, and what base packages it'll
+            be installed with. The desktop environment is the graphical user interface where you do all your regular
+            computer things like having a desktop and taskbar, and all your personalization and theming.</p>
+        <p>Some of the most popular desktop environments are KDE Plasma, Gnome, and Cinnamon, all with their distinct
+            look and reasons they may appeal to you. My personal choice is KDE Plasma as it offers a lot of
+            customization and is very solid. This doesn't mean the others don't, this is just my personal favorite.</p>
+        <h3>I installed KDE Plasma and the login screen looks terrible</h3>
+        <p>Go to your plasma settings and search for sddm, and set the theme to breeze.</p>
+        <h2>Gaming</h2>
+        <p>Gaming on Linux is very good, especially if you're using the latest packages. These last few years especially
+            have been very good and rapidly getting better because of Valve's contributions to Linux gaming. Proton
+            usually just works, just remember to enable steam play for all other titles under steam's compatibility
+            settings so you can actually run games with proton.</p>
+        <picture>
+            <source srcset="./assets/Screenshot_20241026_040200.jxl" type="image/jxl">
+            <source srcset="./assets/Screenshot_20241026_040200.webp" type="image/webp">
+            <img src="./assets/Screenshot_20241026_040200.png" title="Enable Steam Play for all other titles"
+                alt="Steam compatibility settings, and the toggle for steam play for all other titles." loading="lazy"
+                decoding="async" width="90%">
+        </picture>
+        <p>Usually, the latest proton version provided by steam is more than enough to play games. Some brand new games
+            might not work for whatever reason on regular proton though, that's why I
+            recommend trying out Proton-GE. Proton-GE is built off the latest proton build, but with extra features,
+            including support for more codecs, and even fixes for specific games. 99% of the time proton should work, so
+            you probably don't <i>need</i> Proton-GE, it's just nice to have.</p>
+        <h3>Isn't NVIDIA terrible on Linux?</h3>
+        <p>It used to be, and probably still is on some distros that don't have the latest drivers installed by default,
+            but as of recent, it has been amazing. AMD gpus have drivers in the kernel already, so all you would need to
+            do is install mesa and you're good to go to play games. NVIDIA doesn't have its drivers built in by default
+            though, so you have to install them yourself first, and if you're on wayland, you have to set up kernel
+            modesetting as well. What is kernel modesetting? I honestly don't know, but you have to set it up yourself,
+            or else it'll suck a lot. This is all assuming you're using the NVIDIA proprietary drivers, since I don't
+            think Nouveau is quite at the point to play games reliably yet.</p>
+        <p>Since proton converts graphics api calls to vulkan, I often find myself getting a lot more performance in
+            games than I was getting in windows, which surprised me a lot. I had assumed that games would run slightly
+            worse on Linux, but I've actually been able to do even more than I could before.</p>
+        <p>It's also worth mentioning that some games with Linux builds run terribly and are ironically better to run
+            using proton, like Dusk. Whether it's because Linux is a low priority, or it wasn't tested at all, just be
+            wary of that. Terraria's Linux build is good at least. Similarly, apps like discord have poor Linux support,
+            so I recommend installing a community made discord client called Vesktop. Vesktop is built around linux and
+            might actually be more featured than vanilla discord without any of the vencord mods turn on.</p>
+        <h3>Anticheats</h3>
+        <p>Because Proton runs in userspace, and not on the kernel level, games requiring kernel level anticheat will
+            not work. That means no Destiny 2 or Fortnite. They can absolutely run, but you'll trip the anticheat
+            quickly. Some kernel level anticheats provide linux versions with support for proton, like easy anticheat,
+            but it's up to the developer whether to allow linux or not.</p>
+        <p>Personally I believe that with enough work, you can make a server-side anticheat solution that can catch
+            cheating just as well as a kernel level anticheat can. Often times Linux is excluded arbitrarily by the
+            creators of a
+            game, whether it's through uninformed decision making, or because they just don't care because Linux would
+            barely get them any market share by allowing it. This sucks a lot for people who aren't cheating and just
+            want to play a game.</p>
+        <p>Some games that choose not to support Linux can still be run though, there's a specific proton version for
+            running league of legends for example, and there are people making it possible to play roblox on Linux as
+            well. I have zero interest in these games, but maybe it matters more to someone else.</p>
+        <h2>What about regular windows programs?</h2>
+        <p>Wine is what you would use to run windows programs outside of games on steam. Usually it would be better to
+            use a Linux version of an app if it exists, but if a Linux version doesn't exist, you can try it with wine.
+            For example, some mod installers for games will work perfectly under wine. Speaking of, steam lets you pass
+            WINEDLLOVERRIDES in your launch options, giving you easy dll injection, which makes modding easier in some
+            cases. Now, while wine is great and all, it can't run everything well. It can surprise me sometimes, for
+            example, running RTCV under wine worked perfectly and the emulators run by RTCV running under wine had good
+            performance, allowing me to do my shenanigans. Try wine on something like adobe software though and you'll
+            have bad luck, which brings us to our next topic.
+        </p>
+        <h2>Adobe and Linux</h2>
+        <p>The truth is, if you need to use adobe software, you probably can't make the switch. There are simply no good
+            alternatives to general programs like photoshop. If you're already used to using premiere pro, why would you
+            want to switch to davinci resolve or kdenlive now? It just isn't viable for some people to go without these
+            programs, especially if it's for their job. Don't get me wrong, there's amazing software out there that can
+            be used professionally, like Krita for art, or Inkscape for vector graphics. Photoshop though, doesn't
+            really have any good alternatives. Don't listen to people who say GIMP. GIMP is not a photoshop replacement,
+            and while it does have some nice features, you definitely won't be able to use it for school with its
+            terrible name, and it's nowhere as featured as photoshop.</p>
+        <p>So what can you do about this? Well, I honestly don't know. If you can give up adobe software for
+            alternatives, then it might be worth the switch, otherwise, you'll just have to wait until a reliable
+            alternative is made. This all sucks too, because it's not even an issue of a lack of an open source
+            alternative for Linux, it's a lack of any good alternatives at all for Linux. If I had the time and energy,
+            I would love to make the software that solves this issue, but I don't think I'll be able to do such a thing.
+        </p>
+        <h2>What's the point?</h2>
+        <p>If you value having user freedom, Linux allows for it. It is a highly open source, community driven project
+            constantly growing and improving. With some of microsoft's recent decisions, it would make sense to be
+            uncomfortable using windows. Linux isn't perfect, but it's always getting better, and gives you the freedom
+            to choose what you want to use. If you want to use proprietary software, go for it, it doesn't matter what
+            anyone says.</p>
+        <p>The hardest part of Linux is probably having to learn Linux when you're already used to windows. I won't
+            sugarcoat it, it was hard learning everything and making the switch, but with enough time, and help from
+            people I love, I was able to set up the best experience with a computer I've had in my life, and now I can
+            teach other people. When you're learning something, don't be afraid to ask for help. You're not stupid for
+            not understanding something, you're not inferior for using archinstall, it just takes time to learn things.
+            If you don't know anyone who can help you with Linux if you're new to it, you can always reach out to me.
+            I've helped multiple people with Linux in the past and I would be happy to help. My contact info is on my
+            <a href="https://softkittypa.ws">main page</a> if you're interested.
+        </p>
+    </article>
+</body>
