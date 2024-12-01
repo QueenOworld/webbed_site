@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: hack;
-    src: url("./assets/HackNerdFont-Regular.ttf");
+    src: url("./assets/HackNerdFont-RegularSubset.woff2");
 }
 
 body {
@@ -172,6 +172,7 @@ body {
 
 .button {
     position: relative;
+    image-rendering: pixelated;
     display: inline-block;
     animation-name: drop;
     animation-duration: 0.5s;
@@ -190,6 +191,7 @@ body {
     width: 100%;
     display: block;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .top-bar {
