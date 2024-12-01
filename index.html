@@ -29,65 +29,66 @@
         }
     </script>
     <script src="./cursor-effects.js"></script>
-    <script src="vm/build/libv86.js"></script>
     <script>
         b = null;
         "use strict";
 
         function linux() {
-            var btn = document.getElementById("linux-btn");
-            btn.style.display = "none";
-            var emulator = window.emulator = new V86({
-                wasm_path: "vm/build/v86.wasm",
-                memory_size: 256 * 1024 * 1024,
-                vga_memory_size: 8 * 1024 * 1024,
-                screen_container: document.getElementById("screen_container"),
-                bios: {
-                    url: "vm/bios/seabios.bin",
-                },
-                vga_bios: {
-                    url: "vm/bios/vgabios.bin",
-                },
-                bzimage: {
-                    url: "vm/images/bzImage"
-                },
-                initrd: {
-                    url: "vm/images/rootfs.cpio"
-                },
-                //        hda: {
-                //           url: "vm/images/rootfs.tar"
-                //        },
-                //        cmdline: "root=/dev/vda",
-                // I am on crack.
-                network_proxy_url: "wss://relay.widgetry.org/",
-                autostart: true
+            let v86 = './vm/build/libv86.js';
+            import(v86).then(module => {
+                var btn = document.getElementById("linux-btn");
+                btn.style.display = "none";
+                var emulator = window.emulator = new V86({
+                    wasm_path: "vm/build/v86.wasm",
+                    memory_size: 256 * 1024 * 1024,
+                    vga_memory_size: 8 * 1024 * 1024,
+                    screen_container: document.getElementById("screen_container"),
+                    bios: {
+                        url: "vm/bios/seabios.bin",
+                    },
+                    vga_bios: {
+                        url: "vm/bios/vgabios.bin",
+                    },
+                    bzimage: {
+                        url: "vm/images/bzImage"
+                    },
+                    initrd: {
+                        url: "vm/images/rootfs.cpio"
+                    },
+                    //        hda: {
+                    //           url: "vm/images/rootfs.tar"
+                    //        },
+                    //        cmdline: "root=/dev/vda",
+                    // I am on crack.
+                    network_proxy_url: "wss://relay.widgetry.org/",
+                    autostart: true
+                });
+                var data = "";
+                emulator.add_listener("serial0-output-byte", function (byte) {
+                    var char = String.fromCharCode(byte);
+                    if (char === "\r") {
+                        return;
+                    }
+                    data = data + char;
+                    //console.log(char)
+                    console.log(data)
+                    if (data.includes("fedi")) {
+                        console.log("Command sent");
+                        data = "";
+                        window.open("https://lea.pet/@lexi")
+                    }
+                    if (data.includes("github")) {
+                        console.log("Command sent");
+                        data = "";
+                        window.open("https://github.com/QueenOworld");
+                    }
+                    if (data.includes("challenge")) {
+                        console.log("I HATE THIS AAAAHHHHHHHHHHH")
+                        data = "";
+                        emulator.serial0_send(b);
+                    }
+                })
             });
-            var data = "";
-            emulator.add_listener("serial0-output-byte", function (byte) {
-                var char = String.fromCharCode(byte);
-                if (char === "\r") {
-                    return;
-                }
-                data = data + char;
-                //console.log(char)
-                console.log(data)
-                if (data.includes("fedi")) {
-                    console.log("Command sent");
-                    data = "";
-                    window.open("https://lea.pet/@lexi")
-                }
-                if (data.includes("github")) {
-                    console.log("Command sent");
-                    data = "";
-                    window.open("https://github.com/QueenOworld");
-                }
-                if (data.includes("challenge")) {
-                    console.log("I HATE THIS AAAAHHHHHHHHHHH")
-                    data = "";
-                    emulator.serial0_send(b);
-                }
-            })
-
         }
         function javascriptCallback(a) {b = a}
     </script>
@@ -103,10 +104,10 @@
     </script>
     <script src="./oneko/oneko.js" data-cat="./oneko/oneko.gif"></script>
     <audio id="audioPlayer">
-        <source src="./assets/mrap.mp3" type="audio/mpeg" />
+        <source src="./assets/mrap.ogg" type="audio/mpeg" />
     </audio>
     <audio id="onekoMeow">
-        <source src="./assets/moew-cat-purring-fx.wav" type="audio/mpeg" />
+        <source src="./assets/moew-cat-purring-fx.ogg" type="audio/mpeg" />
     </audio>
     <div class="topnav">
         <a class="active" href="./" title="you are here"></a>
