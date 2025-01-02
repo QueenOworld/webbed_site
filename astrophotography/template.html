@@ -7,50 +7,8 @@
     <title>Lexi's Astrophotography</title>
 
     <style>
-        body {
-            margin: 0 auto;
-            max-width: 60%;
-            padding: 20px;
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-
-        @media (max-width : 750px) {
-            body {
-                max-width: 90%;
-            }
-        }
-
-        a {
-            color: #357afa;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: #357afa;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        table td {
-            padding: 0 3em 0.175em 0;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            max-width: 50vw;
-            color: #357afa;
-        }
-
         hr {
             border: 1px dashed #555555;
-        }
-
-        span.arrow,
-        td.size {
-            color: #666666;
         }
 
         div#header {
@@ -135,15 +93,13 @@
     <div id="header">
         <span class="desc">Lexi's Astrophotography</span>
     </div>
-    <div class="gallery-container">
+    <div class="gallery-container" style="width: max-width;">
         <ul class="masonry-gallery">
             {{range .Items}}
             {{if .IsDir}}
             <li><a href="{{.URL}}">{{.Name}}</a></li>
-            </tr>
             {{else}}
             <li style="{{.URL}}"><a href="{{.URL}}"><img src="{{.URL}}" alt="" title="{{.Name}}"></a></li>
-            </tr>
             {{end}}
             {{end}}
         </ul>
