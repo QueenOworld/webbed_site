@@ -7,6 +7,14 @@
     <title>Lexi's Astrophotography</title>
 
     <style>
+        body {
+            margin: 0 auto;
+            max-width: 90%;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
         hr {
             border: 1px dashed #555555;
         }
@@ -93,7 +101,7 @@
     <div id="header">
         <span class="desc">Lexi's Astrophotography</span>
     </div>
-    <div class="gallery-container" style="width: max-width;">
+    <div class="gallery-container">
         <ul class="masonry-gallery">
             {{range .Items}}
             {{if .IsDir}}
