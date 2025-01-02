@@ -101,16 +101,18 @@
     <div id="header">
         <span class="desc">Lexi's Astrophotography</span>
     </div>
-    <div class="gallery-container">
-        <ul class="masonry-gallery">
-            {{range .Items}}
-            {{if .IsDir}}
-            <li><a href="{{.URL}}">{{.Name}}</a></li>
-            {{else}}
-            <li style="{{.URL}}"><a href="{{.URL}}"><img src="{{.URL}}" alt="" title="{{.Name}}"></a></li>
-            {{end}}
-            {{end}}
-        </ul>
+    <div class="wrapper">
+        <div class="gallery-container">
+            <ul class="masonry-gallery">
+                {{range .Items}}
+                {{if .IsDir}}
+                <li><a href="{{.URL}}">{{.Name}}</a></li>
+                {{else}}
+                <li style="{{.URL}}"><a href="{{.URL}}"><img src="{{.URL}}" alt="" title="{{.Name}}"></a></li>
+                {{end}}
+                {{end}}
+            </ul>
+        </div>
     </div>
 </body>
 
