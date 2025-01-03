@@ -109,9 +109,7 @@
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
                 {{else}}
-                <li style="{{.URL}}"><a href="{{.URL}}">
-                        <img src="{{.URL}}" alt="" title="{{.Name}}">
-                    </a></li>
+                <li style="{{.URL}}"><a href="{{.URL}}"><img src="{{.URL}}" alt="" title="{{.Name}}"></a></li>
                 {{end}}
                 {{end}}
             </ul>
