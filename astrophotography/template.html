@@ -37,7 +37,7 @@
             .gallery-container {
                 background: #050505;
                 border-radius: 0.5rem;
-                padding: 1rem;
+                padding: 3rem;
                 margin: 2rem 0;
 
                 h2 {
@@ -109,7 +109,10 @@
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
                 {{else}}
-                <li style="{{.URL}}"><a href="{{.URL}}"><img src="{{.URL}}" alt="" title="{{.Name}}"></a></li>
+                <li style="{{.URL}}"><a href="{{.URL}}">
+                        <picture src="{{.URL}}" alt="" title="{{.Name}}">
+                        </picture>
+                    </a></li>
                 {{end}}
                 {{end}}
             </ul>
