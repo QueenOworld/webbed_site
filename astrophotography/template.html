@@ -104,12 +104,12 @@
     </div>
     <div class="wrapper">
         <div class="gallery-container">
-            <ul class="mosaic-gallery">
+            <ul class="masonry-gallery">
                 {{range .Items}}
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
                 {{else}}
-                <li style="background-image:url('{{.URL}}')">
+                <li>
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" title="{{.Name}}">
                     </a>
