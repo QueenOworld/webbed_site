@@ -107,6 +107,7 @@
                 {{range .Items}}
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
+                {{else}}
                 <li>
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}">
