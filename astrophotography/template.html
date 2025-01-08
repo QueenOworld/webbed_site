@@ -108,8 +108,8 @@
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
                 {{else}}
+                {{if {{.Ext "{{.URL}}"}} not "mp4"}}
                 <li>
-                    {{if {{.Ext "{{.URL}}"}} not "mp4"}}
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}">
                     </a>
@@ -117,8 +117,8 @@
                     <a href="{{.URL}}">
                         <video src="{{.URL}}" alt="" title="{{.Name}}">
                     </a>
-                    {{end}}
                 </li>
+                {{end}}
                 {{end}}
                 {{end}}
             </ul>
