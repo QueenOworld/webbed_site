@@ -108,6 +108,10 @@
                 <li>
                     {{if .IsDir}}
                     <a href="{{.URL}}">{{.Name}}</a>
+                    {{else if .HasExt ".mp4" ".mov" ".webm"}}
+                    <a href="{{.URL}}">
+                        <video src="{{.URL}}" alt="" title="{{.Name}}">
+                    </a>
                     {{else}}
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}">
