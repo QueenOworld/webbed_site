@@ -107,8 +107,7 @@
                 {{range .Items}}
                 {{if .IsDir}}
                 <li><a href="{{.URL}}">{{.Name}}</a></li>
-                {{else}}
-                {{if {{.Ext "{{.URL}}"}} not "mp4"}}
+                {{else if eq {{.Ext .URL}} ".mp4"}}
                 <li>
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}">
@@ -118,7 +117,6 @@
                         <video src="{{.URL}}" alt="" title="{{.Name}}">
                     </a>
                 </li>
-                {{end}}
                 {{end}}
                 {{end}}
             </ul>
