@@ -105,15 +105,19 @@
         <div class="gallery-container">
             <ul class="masonry-gallery">
                 {{range .Items}}
-                {{if .IsDir}}
-                <li><a href="{{.URL}}">{{.Name}}</a></li>
-                {{else}}
                 <li>
+                    {{if .IsDir}}
+                    <a href="{{.URL}}">{{.Name}}</a>
+                    {{else if eq .Ext .Url ".mp4"}}
+                    <a href="{{.URL}}">
+                        <video src="{{.URL}}" alt="" title="{{.Name}}">
+                    </a>
+                    {{else}}
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}">
                     </a>
+                    {{end}}
                 </li>
-                {{end}}
                 {{end}}
             </ul>
         </div>
