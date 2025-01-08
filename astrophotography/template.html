@@ -126,7 +126,6 @@
                 {{range .Items}}
                 <li>
                     {{if .IsDir}}
-                    <a href="{{.URL}}">{{.Name}}</a>
                     {{else if .HasExt ".mp4"}}
                     <a href="{{.URL}}">
                         <video alt="" title="{{.Name}}">
