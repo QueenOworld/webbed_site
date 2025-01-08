@@ -124,20 +124,22 @@
         <div class="gallery-container">
             <ul class="masonry-gallery">
                 {{range .Items}}
+                {{if .IsDir}}
+                {{else if .HasExt ".mp4"}}
                 <li>
-                    {{if .IsDir}}
-                    {{else if .HasExt ".mp4"}}
                     <a href="{{.URL}}">
                         <video alt="" title="{{.Name}}" style="z-index: 1312;">
                             <source src="{{.URL}}"" type=" video/mp4">
                         </video>
                     </a>
-                    {{else}}
+                </li>
+                {{else}}
+                <li>
                     <a href="{{.URL}}">
                         <img src="{{.URL}}" alt="" title="{{.Name}}" style="z-index: 1312;">
                     </a>
-                    {{end}}
                 </li>
+                {{end}}
                 {{end}}
             </ul>
         </div>
