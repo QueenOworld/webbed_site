@@ -128,13 +128,13 @@
                     {{if .IsDir}}
                     {{else if .HasExt ".mp4"}}
                     <a href="{{.URL}}">
-                        <video alt="" title="{{.Name}}">
+                        <video alt="" title="{{.Name}}" style="z-index: 1312;">
                             <source src="{{.URL}}"" type=" video/mp4">
                         </video>
                     </a>
                     {{else}}
                     <a href="{{.URL}}">
-                        <img src="{{.URL}}" alt="" title="{{.Name}}">
+                        <img src="{{.URL}}" alt="" title="{{.Name}}" style="z-index: 1312;">
                     </a>
                     {{end}}
                 </li>
