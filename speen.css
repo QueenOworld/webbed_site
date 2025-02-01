@@ -289,9 +289,51 @@ hr.rounded {
     -webkit-text-fill-color: transparent;
 }
 
+#linux-btn {
+    color: white;
+    background: -webkit-radial-gradient(#aee, #a2f, #ca4);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #linux-btn:hover {
     color: white;
     background: -webkit-radial-gradient(#a42, #e18);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    position: relative;
+}
+
+.container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: url('./assets/floyd.webp');
+    background-size: cover;
+    mix-blend-mode: overlay;
+    border-radius: 100rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    opacity: 0.10;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+h2 a:hover {
+    color: white;
+    background: -webkit-radial-gradient(#ce2, #f3b);
     background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
