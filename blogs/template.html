@@ -9,18 +9,24 @@
     <title>Lexi's Blogs</title>
 
     <style>
-    
+        body {
+            background-color: #111;
+        }
     </style>
 </head>
 
 <body>
-    <li>
-        {{range .Items}}
-        <p>
-            <a href="{{.URL}}">{{.Name}}</a>
-        </p>
-        {{end}}
-    </li>
+    <table>
+        <tr>
+            {{range .Items}}
+            <td>
+                <p>
+                    <a href="{{.URL}}">{{.Name}}</a>
+                </p>
+            </td>
+            {{end}}
+        </tr>
+    </table>
 </body>
 
 </html>
