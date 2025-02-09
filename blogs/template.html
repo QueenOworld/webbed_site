@@ -11,6 +11,11 @@
     <style>
         body {
             background-color: #111;
+            color: #fff;
+        }
+
+        table {
+            margin: auto;
         }
     </style>
 </head>
@@ -18,11 +23,16 @@
 <body>
     <table>
         <tr>
+            <td>
+                <h1>Blogs</h1>
+            </td>
+        </tr>
+        <tr>
             {{range .Items}}
             <td>
-                <p>
+                <h3>
                     <a href="{{.URL}}">{{.Name}}</a>
-                </p>
+                </h3>
             </td>
             {{end}}
         </tr>
