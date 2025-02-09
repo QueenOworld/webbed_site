@@ -8,13 +8,16 @@
 
     <title>Lexi's Blogs</title>
 
+    <style>
+    
+    </style>
 </head>
 
 <body>
     <li>
         {{range .Items}}
         <p>
-            <a href="{{.URL}}">{{.URL}}</a>
+            <a href="{{.URL}}">{{.Name}}</a>
         </p>
         {{end}}
     </li>
