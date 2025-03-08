@@ -210,6 +210,94 @@ body {
     padding: 2px;
 }
 
+.leftside {
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 3rem;
+    max-width: 4rem;
+    background: brown;
+
+    border-style: ridge;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 15px;
+    background: url('./assets/fear.webp');
+    height: 400px;
+    padding-right: 10px;
+}
+
+#leftlist {
+    padding: 0px;
+}
+
+.leftlistitem {
+    background: -webkit-radial-gradient(42% 52%, circle closest-corner, #e1b, #bfc, #23c);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    text-decoration-style: none;
+}
+
+.leftside li {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.rightside {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 3rem;
+    max-width: 4rem;
+    background: brown;
+
+    border-style: ridge;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 15px;
+    background: url('./assets/fear.webp');
+    background-position: center;
+    height: 400px;
+    padding-right: 10px;
+}
+
+#rightlist {
+    padding: 0px;
+}
+
+.rightlistitem {
+    background: -webkit-linear-gradient(20deg, #e1b, #bfc, #23c);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    text-decoration-style: none;
+}
+
+.rightside li {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.rightside a,
+.leftside a {
+    text-decoration: none;
+}
+
+.leftlistitem:hover {
+    background: -webkit-radial-gradient(center, ellipse cover, #36f, #f36);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rightlistitem:hover {
+    background: -webkit-radial-gradient(#f18, #e1f);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .sidebar {
     border-style: ridge;
     border-width: 2px;
@@ -320,9 +408,7 @@ hr.rounded {
     background-image: url('./assets/floyd2.webp');
     background-size: cover;
     mix-blend-mode: overlay;
-    border-radius: 100rem;
-    margin-left: 20%;
-    margin-right: 20%;
+    border-radius: 200px;
     opacity: 0.10;
 }
 
@@ -337,4 +423,8 @@ h2 a:hover {
     background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.whereiam:before {
+    border-radius: 100px !important;
 }
